@@ -9,6 +9,7 @@ export default function BlogPage() {
       {posts.map((post) => (
         <BlogCard
           key={post.slug}
+          slug={post.slug}
           title={post.title}
           category={post.category}
           thumbnail={post.thumbnail}
