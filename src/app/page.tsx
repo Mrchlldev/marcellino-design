@@ -15,8 +15,7 @@ export default function HomePage() {
       <Hero />
 
       <section className="pb-24">
-        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-[300px_1fr] gap-10">
-          <Sidebar />
+        <div className="max-w-7xl mx-auto px-6">
 
           <div className="grid md:grid-cols-2 gap-8">
             {posts.map((post) => (
