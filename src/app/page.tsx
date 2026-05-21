@@ -4,7 +4,11 @@ import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/Sidebar";
 
+import { getPosts } from "@/lib/posts";
+
 export default function HomePage() {
+  const posts = getPosts();
+
   return (
     <>
       <Navbar />
@@ -15,29 +19,14 @@ export default function HomePage() {
           <Sidebar />
 
           <div className="grid md:grid-cols-2 gap-8">
-            <BlogCard
-              title="Modern Neo Brutalism UI"
-              category="UI Design"
-              thumbnail="https://picsum.photos/600/400"
-            />
-
-            <BlogCard
-              title="Creative Landing Page Ideas"
-              category="Frontend"
-              thumbnail="https://picsum.photos/600/401"
-            />
-
-            <BlogCard
-              title="Glassmorphism Trends"
-              category="Inspiration"
-              thumbnail="https://picsum.photos/600/402"
-            />
-
-            <BlogCard
-              title="Typography for Designers"
-              category="Design"
-              thumbnail="https://picsum.photos/600/403"
-            />
+            {posts.map((post) => (
+              <BlogCard
+                key={post.slug}
+                title={post.title}
+                category={post.category}
+                thumbnail={post.thumbnail}
+              />
+            ))}
           </div>
         </div>
       </section>
