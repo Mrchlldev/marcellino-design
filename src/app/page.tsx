@@ -25,6 +25,7 @@ export default function HomePage() {
                 title={post.title}
                 category={post.category}
                 thumbnail={post.thumbnail}
+                slug={post.slug}
               />
             ))}
           </div>
