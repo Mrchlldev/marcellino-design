@@ -1,4 +1,20 @@
 @import "tailwindcss";
+@theme {
+  --font-title: var(--font-title);
+  --font-body: var(--font-body);
+}
+
+body {
+  font-family: var(--font-body);
+}
+
+.font-title {
+  font-family: var(--font-title);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
 
 * {
   scroll-behavior: smooth;
