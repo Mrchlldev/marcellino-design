@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.neo-card {
+  border: 4px solid black;
+  border-radius: 24px;
+  box-shadow: 8px 8px 0px black;
+  transition: all 0.2s ease;
+}
+
+.neo-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 12px 12px 0px black;
+}
+
+.neo-button {
+  border: 4px solid black;
+  box-shadow: 6px 6px 0px black;
+  transition: all 0.2s ease;
+}
+
+.neo-button:hover {
+  transform: translate(-3px, -3px);
+}
