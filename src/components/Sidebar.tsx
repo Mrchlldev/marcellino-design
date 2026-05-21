@@ -134,10 +134,11 @@ export default function Sidebar({
               border-r-[4px]
               border-black
               z-50
-              overflow-y-auto
+              flex
+              flex-col
             "
           >
-            <div className="p-6">
+            <div className="flex-1 overflow-y-auto p-6">
               <div className="flex items-center justify-between mb-10">
                 <h2 className="font-title text-3xl">
                   MENU
