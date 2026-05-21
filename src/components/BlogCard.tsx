@@ -1,36 +1,68 @@
-import Image from "next/image";
+import Link from "next/link";
 
 type Props = {
   title: string;
   category: string;
   thumbnail: string;
+  slug: string;
 };
 
 export default function BlogCard({
   title,
   category,
   thumbnail,
+  slug,
 }: Props) {
   return (
-    <div className="neo-card bg-white overflow-hidden">
-      <div className="relative w-full h-56 border-b-4 border-black">
-        <Image
+    <Link href={`/blog/${slug}`}>
+      <article
+        className="
+          bg-[#FFF4D6]
+          border-[4px]
+          border-black
+          shadow-[8px_8px_0px_#000]
+          hover:translate-x-[4px]
+          hover:translate-y-[4px]
+          hover:shadow-none
+          transition-all
+          overflow-hidden
+          cursor-pointer
+        "
+      >
+        <img
           src={thumbnail}
           alt={title}
-          fill
-          className="object-cover"
+          className="w-full h-[220px] object-cover border-b-[4px] border-black"
         />
-      </div>
 
-      <div className="p-6">
-        <div className="inline-block px-4 py-2 border-4 border-black rounded-xl bg-[#FFE55C] font-bold text-sm">
-          {category}
+        <div className="p-5">
+          <span
+            className="
+              inline-block
+              px-3
+              py-1
+              mb-4
+              text-sm
+              font-bold
+              bg-[#FFB800]
+              border-[3px]
+              border-black
+            "
+          >
+            {category}
+          </span>
+
+          <h2
+            className="
+              text-2xl
+              font-black
+              leading-tight
+            "
+          >
+            {title}
+          </h2>
         </div>
-
-        <h2 className="font-title text-3xl mt-5">
-          {title}
-        </h2>
-      </div>
-    </div>
+      </article>
+    </Link>
   );
 }
