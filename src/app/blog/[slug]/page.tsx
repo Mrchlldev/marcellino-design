@@ -30,7 +30,7 @@ export default async function BlogPostPage({ params }: Props) {
         alt={data.title}
         className="
           w-full
-          h-[400px]
+          h-auto
           object-cover
           border-[4px]
           border-black
