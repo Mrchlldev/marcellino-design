@@ -1,32 +1,36 @@
-import "./globals.css";
-
+import type { Metadata } from "next";
 import { Archivo_Black, Space_Grotesk } from "next/font/google";
+import "./globals.css";
 
 const archivo = Archivo_Black({
   subsets: ["latin"],
   weight: "400",
-  variable: "--font-archivo-black",
+  variable: "--font-title",
 });
 
-const space = Space_Grotesk({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  variable: "--font-space-grotesk",
+  variable: "--font-body",
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Marcellino Desain",
-  description: "Blog desain Neo Brutalism",
+  description: "Blog seputar desain dan inspirasi kreatif",
 };
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="en">
       <body
-        className={`${archivo.variable} ${space.variable} bg-[#FFF7E8] text-black font-body`}
+        className={`
+          ${archivo.variable}
+          ${spaceGrotesk.variable}
+          font-body
+        `}
       >
         {children}
       </body>
